@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import './styles/App.css'
 import Login from './components/Login'
+import { connect } from 'react-redux'
+import { getCurrentUser } from "./actions/currentUser"
 
-export default class App extends Component {
+class App extends Component {
 
+  componentDidMount() {
+    this.props.getCurrentUser()
+  }
   
   render() {
     return (
@@ -13,3 +18,11 @@ export default class App extends Component {
 }
 
 
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser,
+    //trips: state.myTrips
+  })
+}
+
+export default connect(mapStateToProps, { getCurrentUser })(App)
