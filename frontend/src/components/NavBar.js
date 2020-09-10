@@ -6,10 +6,10 @@ import Logout from './Logout'
 //
 const NavBar = ({ currentUser, loggedIn }) => {
   return (
-    <div className="NavBar navbar navbar-expand-lg navbar-light bg-light">
+    <div className="NavBar navbar navbar-expand-lg navbar-light bg-danger">
       { currentUser ? <strong>Welcome, {currentUser.attributes.name} from:
-       {currentUser.attributes.hometown.city},
-       {currentUser.attributes.hometown.state}</strong>
+      {currentUser.attributes.hometown.city},
+      {currentUser.attributes.hometown.state}</strong>
       : ""}
       {/* <NavLink exact activeClassName="active" to="/trips"  >My Trips</NavLink>
       <NavLink exact activeClassName="active" to="/trips/new" >New Trip</NavLink> */}
@@ -18,11 +18,6 @@ const NavBar = ({ currentUser, loggedIn }) => {
   )
 }
 
-// I an do this because I know the incoming argument is an object, state, coming from redux
-// and I know it has a property called currentUser
-// state = { ...,
-//   currentUser: {...}
-// }
 
 const mapStateToProps = ({ currentUser }) => {
   return {
