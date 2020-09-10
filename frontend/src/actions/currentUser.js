@@ -80,8 +80,8 @@ export const signup = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          //dispatch(getMyTrips())
-          //dispatch(resetSignupForm())
+          dispatch(getMyTrips())
+          dispatch(resetSignupForm())
           //history.push('/')
         }
       })

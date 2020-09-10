@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import './styles/App.css'
 import Login from './components/Login'
+import Logout from './components/Logout'
+import MyTrips from './components/MyTrips.js'
 import NavBar from './components/NavBar.js'
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser"
 import MainContainer from './components/MainContainer'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import "bootswatch/dist/solar/bootstrap.min.css";
 
 class App extends Component {
@@ -17,8 +20,10 @@ class App extends Component {
     return (
       <div className="App">
       <NavBar />
-      <Login />
-      <MainContainer />
+        <Route exact path='/login' component={Login}/>
+        <Route exact path='/logout' component={Logout}/>
+        <Route exact path='/trips' component={MyTrips}/>
+        <MainContainer />
       </div>
     )
   }
@@ -58,7 +63,7 @@ class App extends Component {
 const mapStateToProps = state => {
   return ({
     loggedIn: !!state.currentUser,
-    //trips: state.myTrips
+    trips: state.myTrips
   })
 }
 
