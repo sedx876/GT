@@ -33,13 +33,19 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='form-group' onSubmit={handleSubmit}>
       <input placeholder="name" value={signupFormData.name} name="name" type="text" onChange={handleUserInfoInputChange} />
+      <br />
       <input placeholder="username" value={signupFormData.username} name="username" type="text" onChange={handleUserInfoInputChange} />
+      <br />
       <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleUserInfoInputChange} />
+      <br />
       <input placeholder="city" value={signupFormData.hometown.city} name="city" type="text" onChange={handleHomeTownInfoInputChange} />
+      <br />
       <input placeholder="state" value={signupFormData.hometown.state} name="state" type="text" onChange={handleHomeTownInfoInputChange} />
+      <br />
       <input placeholder="country" value={signupFormData.hometown.country} name="country" type="text" onChange={handleHomeTownInfoInputChange} />
+      <br />
       <input type="submit" value="Sign Up"/>
     </form>
   )

@@ -7,6 +7,7 @@ import NavBar from './components/NavBar.js'
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser"
 import MainContainer from './components/MainContainer'
+import Signup from './components/Signup.js'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import "bootswatch/dist/solar/bootstrap.min.css";
 
@@ -23,6 +24,7 @@ class App extends Component {
         <Route exact path='/login' component={Login}/>
         <Route exact path='/logout' component={Logout}/>
         <Route exact path='/trips' component={MyTrips}/>
+        <Route exact path='/signup' component={Signup}/>
         <MainContainer />
       </div>
     )

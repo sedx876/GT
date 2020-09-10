@@ -1,4 +1,5 @@
 import { resetLoginForm } from "./loginForm.js"
+import { resetSignupForm } from "./signupForm.js"
 import { getMyTrips, clearTrips } from "./myTrips.js"
 
 export const setCurrentUser = user => {
