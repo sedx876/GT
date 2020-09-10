@@ -1,3 +1,5 @@
+import { resetLoginForm } from "./loginForm.js"
+
 export const setCurrentUser = user => {
   return {
     type: "SET_CURRENT_USER",
@@ -50,7 +52,7 @@ export const login = (credentials, history) => {
         } else {
           dispatch(setCurrentUser(response.data))
           //dispatch(getMyTrips())
-          //dispatch(resetLoginForm())
+          dispatch(resetLoginForm())
           //history.push('/')
         }
       })

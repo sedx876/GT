@@ -5,6 +5,7 @@ import NavBar from './components/NavBar.js'
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser"
 import MainContainer from './components/MainContainer'
+import "bootswatch/dist/sketchy/bootstrap.min.css";
 
 class App extends Component {
 
