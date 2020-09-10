@@ -1,4 +1,5 @@
 import { resetLoginForm } from "./loginForm.js"
+import { getMyTrips } from "./myTrips.js"
 
 export const setCurrentUser = user => {
   return {
@@ -28,7 +29,7 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          //dispatch(getMyTrips())
+          dispatch(getMyTrips())
         }
       })
       .catch(console.log)
@@ -51,7 +52,7 @@ export const login = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          //dispatch(getMyTrips())
+          dispatch(getMyTrips())
           dispatch(resetLoginForm())
           //history.push('/')
         }
