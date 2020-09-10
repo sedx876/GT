@@ -20,7 +20,7 @@
 }
 
 #loggedin {
-  font-size: 7px;
+  font-size: 10px;
 }
 .App-link {
   color: #61dafb;
@@ -44,4 +44,6 @@
 .active {
   color: green;
 }
+
+
 
