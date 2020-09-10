@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 
 const MyTrips = props => {
   const tripCards = props.trips.length > 0 ?
-    props.trips.map(t => (<p key={t.id}>
-    <h4 className="card text-white bg-primary mb-12">{t.attributes.name}<br />
-    From:{t.attributes.start_date}  To:{t.attributes.end_date}</h4>
+    props.trips.map(t => (<p key={t.id} className="card text-white bg-primary mb-12">
+    {t.attributes.name}<br />
+    From:{t.attributes.start_date}  To:{t.attributes.end_date}
     {/* <Link to={`/trips/${t.id}`}>{t.attributes.name}</Link> */}
     </p>)) :
     null

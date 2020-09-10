@@ -13,7 +13,7 @@ const NavBar = ({ currentUser, loggedIn }) => {
       : ""}
       {/* <NavLink exact activeClassName="active" to="/trips"  >My Trips</NavLink>
       <NavLink exact activeClassName="active" to="/trips/new" >New Trip</NavLink> */}
-      { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.name}</p><Logout/></> : null}
+      { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.name}</p><Logout /></> : null}
     </div>
   )
 }

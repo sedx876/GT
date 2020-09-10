@@ -91,7 +91,7 @@ export const signup = (credentials, history) => {
 
 export const logout = event => {
   return dispatch => {
-    //dispatch(clearCurrentUser())
+    dispatch(clearCurrentUser())
     //dispatch(clearTrips())
     console.log('outta here')
     return fetch('http://localhost:3001/api/v1/logout', {
