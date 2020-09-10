@@ -1,5 +1,5 @@
 import { resetLoginForm } from "./loginForm.js"
-import { getMyTrips } from "./myTrips.js"
+import { getMyTrips, clearTrips } from "./myTrips.js"
 
 export const setCurrentUser = user => {
   return {
@@ -92,7 +92,7 @@ export const signup = (credentials, history) => {
 export const logout = event => {
   return dispatch => {
     dispatch(clearCurrentUser())
-    //dispatch(clearTrips())
+    dispatch(clearTrips())
     console.log('outta here')
     return fetch('http://localhost:3001/api/v1/logout', {
       credentials: "include",

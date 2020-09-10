@@ -7,11 +7,11 @@ export const setMyTrips = trips => {
   }
 }
 
-// export const clearTrips = () => {
-//   return {
-//     type: "CLEAR_TRIPS"
-//   }
-// }
+export const clearTrips = () => {
+  return {
+    type: "CLEAR_TRIPS"
+  }
+}
 
 // export const addTrip = trip => {
 //   return {
