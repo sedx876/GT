@@ -1,41 +1,23 @@
-import React, { Component } from 'react'
-import './styles/App.css'
-import Login from './components/Login'
-import Logout from './components/Logout'
-import MyTrips from './components/MyTrips.js'
+import React from 'react';
+import './styles/App.css';
+import { connect } from 'react-redux'
+import { getCurrentUser } from "./actions/currentUser.js"
 import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
-import NewTripFormWrapper from './components/NewTripFormWrapper.js'
-import { connect } from 'react-redux'
-import { getCurrentUser } from "./actions/currentUser"
-import MainContainer from './components/MainContainer'
+import Login from './components/Login.js'
 import Signup from './components/Signup.js'
+import MyTrips from './components/MyTrips.js'
+import TripCard from './components/TripCard.js'
+import NewTripFormWrapper from './components/NewTripFormWrapper.js'
+import EditTripFormWrapper from './components/EditTripFormWrapper.js'
 import { Route, Switch, withRouter } from 'react-router-dom'
-import "bootswatch/dist/sketchy/bootstrap.min.css";
 
-class App extends Component {
+class App extends React.Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
   }
 
-  // render(){
-  //   const { loggedIn } = this.props 
-  //   return (
-  //     <div className="App">
-  //     <Switch>
-  //     {/* <NavBar /> */}
-  //       <Route exact path='/' render={()=> loggedIn ? <MyTrips /> : <Home /> } />
-  //       <Route exact path='/login' component={Login}/>
-  //       <Route exact path='/logout' component={Logout}/>
-  //       <Route exact path='/trips' component={MyTrips}/>
-  //       <Route exact path='/signup' component={Signup}/>
-  //       <MainContainer />
-  //     </Switch>
-  //     </div>
-  //   )
-  // }
-  
   render(){
     const { loggedIn, trips } = this.props
     return (
@@ -74,4 +56,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { getCurrentUser })(App)
+export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));

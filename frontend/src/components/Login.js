@@ -22,21 +22,18 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input placeholder="username" 
-      value={loginFormData.username} 
-      name="username" type="text" 
-      onChange={handleInputChange} />
-        <br />
-      <input placeholder="password" 
-      value={loginFormData.password} 
-      name="password" type="text" 
-      onChange={handleInputChange} />
-        <br />
+      <input placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleInputChange} />
+      <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} />
       <input type="submit" value="Log In"/>
     </form>
   )
 }
 
+// this gives me an argument coming to this component that looks like this:
+// {
+//   username: "cpdun",
+//   password: "passwo"
+// }
 const mapStateToProps = state => {
   return {
     loginFormData: state.loginForm
